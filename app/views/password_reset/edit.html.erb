@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto border p-5">
+    <h1 class="mb-3">Forgot Password</h1> 
+      <%= form_for :user, url: password_reset_update_path do |f| %>
+        <div class="mb-3">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="">
+          <%= f.submit "Send Password Reset Link", class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

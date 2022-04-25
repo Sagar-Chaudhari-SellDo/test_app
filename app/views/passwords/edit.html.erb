@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto border p-5">
+    <h1 class="mb-3">Change Password</h1> 
+      <%= form_for @current_user, url: passwords_path, method: :patch do |f| %>
+      <% if f.object.errors.any? %>
+        <div class="alert alert-danger">
+          <% f.object.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+      <% end %>
+        <div class="mb-3">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class="">
+          <%= f.submit "Update Password", class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
